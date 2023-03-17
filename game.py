@@ -3,14 +3,17 @@ from datetime import datetime
 
 #Operadores posibles
 operators = ["+", "-", "*", "/"]
+
 #Cantidad de cuentas a resolver
 times = 5
+
 #Contador inicial de tiempo
 #Esto toma la fecha y hora actual
 init_time = datetime.now()
 correcta = 0
 incorrecta = 0
 print(f"Veremos cuanto tardas en responder estas {times} operaciones!")
+
 for i in range (0, times):
 #Se eligen numeros y operadores al azar
     number_1 = randrange(10)
@@ -26,7 +29,11 @@ for i in range (0, times):
     elif operator == "*":
         resultado = number_1 * number_2
     else:
+        if number_2 == 0: # Para evitar divisiones por 0
+            print("Error: No se puede dividir por cero")
+            continue
         resultado = number_1 / number_2
+
     result = int(input("resultado: "))   
     if (resultado == result):
         print("El resultado es correcto")
@@ -38,8 +45,10 @@ for i in range (0, times):
 #Al terminar todo la cantidad de cuentas por resolver
 #Se vuelve a tomar la fecha y hora.
 end_time = datetime.now()
+
 #Restando las fechas obtenemos el tiempo transcurrido
 total_time = end_time - init_time
+
 #Mostramos ese tiempo en segundos.
 print(f"/n Tardaste {total_time.seconds} segundos.")
 print(f"Obtuviste {correcta} respuestas correctas")
