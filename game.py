@@ -53,4 +53,3 @@ total_time = end_time - init_time
 print(f"/n Tardaste {total_time.seconds} segundos.")
 print(f"Obtuviste {correcta} respuestas correctas")
 print(f"Obtuviste {incorrecta} respuestas incorrectas")
- #pruebagithub
