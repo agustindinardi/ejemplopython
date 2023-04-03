@@ -30,29 +30,39 @@ notas_2 = [30, 95, 28, 84, 84, 43, 66, 51, 4, 11, 58, 10, 13, 34, 96, 71, 86, 37
            95, 19, 47, 15, 31, 39, 15, 74, 33, 57, 10]
 
 # A. Generar una estructura con todas las notas relacionando el nombre del estudiante con las notas. Utilizar esta estructura para la resolución de los siguientes items.
-notas_agrupadas = list(zip(notas_1, notas_2))
-notas = dict(zip(nombres, notas_agrupadas))
-print(notas)
-print("-"*40)
+def incisoA ():
+    notas_agrupadas = list(zip(notas_1, notas_2))
+    notas = dict(zip(nombres, notas_agrupadas))
+    print(notas)
+    print("-"*40)
+    incisoB(notas_agrupadas)
 
 # B. Calcular el promedio de notas de cada estudiante.
-promedios = list(map(lambda x: sum(x)/len(x), notas_agrupadas))
-promedios_estudiantes = dict(zip(nombres, promedios))
-print(promedios_estudiantes)
-print("-"*40)
+def incisoB (notas_agrupadas):
+    promedios = list(map(lambda x: sum(x)/len(x), notas_agrupadas))
+    promedios_estudiantes = dict(zip(nombres, promedios))
+    print(promedios_estudiantes)
+    print("-"*40)
+    incisoC(promedios)
+    incisoD(promedios_estudiantes)
+    incisoE(promedios_estudiantes)
 
 # C. Calcular el promedio general del curso.
-promedio_todos = sum(promedios) / len(promedios)
-print(f"Promedio general entre todos los alumnos: {promedio_todos}")
-print("-"*40)
+def incisoC (promedios):
+    promedio_todos = sum(promedios) / len(promedios)
+    print(f"Promedio general entre todos los alumnos: {promedio_todos}")
+    print("-"*40)
 
 # D. Identificar al estudiante con la nota promedio más alta.
-estudiante_max = max(promedios_estudiantes, key=promedios_estudiantes.get)
-print(f"Estudiante con nota promedio mas alta: {estudiante_max}")
-print("-"*40)
+def incisoD (promedios_estudiantes):
+    estudiante_max = max(promedios_estudiantes, key=promedios_estudiantes.get)
+    print(f"Estudiante con nota promedio mas alta: {estudiante_max}")
+    print("-"*40)
 
 # E. Identificar al estudiante con la nota más baja.
-estudiante_min = min(promedios_estudiantes, key=promedios_estudiantes.get)
-print(f"Estudiante con nota promedio mas baja: {estudiante_min}")
-print("-"*40)
+def incisoE (promedios_estudiantes):
+    estudiante_min = min(promedios_estudiantes, key=promedios_estudiantes.get)
+    print(f"Estudiante con nota promedio mas baja: {estudiante_min}")
+    print("-"*40)
 
+incisoA()
